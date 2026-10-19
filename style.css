@@ -1,0 +1,411 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #ffd1dc, #ffb3c6);
+  overflow-x: hidden;
+}
+
+/* ================= HERO / FIRST SCREEN ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(180deg, #ffd1dc, #ffb3c6);
+}
+
+/* Hearts floating background */
+.hearts::before,
+.hearts::after {
+  content: "❤ ❤ ❤ ❤ ❤ ❤ ❤";
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  color: rgba(255, 77, 109, 0.25);
+  animation: floatHearts 10s linear infinite;
+}
+
+.hearts::after {
+  animation-delay: 5s;
+  font-size: 22px;
+}
+
+@keyframes floatHearts {
+  from { transform: translateY(100vh); }
+  to   { transform: translateY(-120vh); }
+}
+
+/* ================= HERO CONTENT ================= */
+.hero-content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 52px;
+  color: #5a1a2e;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #6b2b3d;
+  max-width: 420px;
+}
+
+/* TYPE TEXT (FIXED CENTER) */
+.type-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #8a1f3d;
+  max-width: 520px;
+  text-align: center;
+  animation: fadeUp 1.4s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= BUTTON ================= */
+.btn {
+  margin-top: 12px;
+  padding: 14px 38px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(135deg, #ff4d6d, #ff7a95);
+  box-shadow: 0 10px 25px rgba(255,77,109,0.4);
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+/* ================= SCROLL HINT ================= */
+.scroll-hint {
+  position: absolute;
+  bottom: 22px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ================= OVERLAY CARD ================= */
+
+#celebration-overlay {
+  display: none;          /* 🔥 KEY FIX */
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 192, 203, 0.65);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.celebration-box {
+  background: #fff;
+  max-width: 700px;
+  width: 90%;
+  padding: 60px 50px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(255, 105, 135, 0.25);
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.celebration-box::before {
+  content: "💖";
+  position: absolute;
+  font-size: 160px;
+  opacity: 0.05;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.small-title {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.name {
+  font-size: 52px;
+  color: #d6336c;
+  margin-bottom: 30px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.message {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+#closeOverlay {
+  margin-top: 30px;
+  padding: 12px 36px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff4d6d, #ff85a2);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4);
+  transition: transform 0.3s;
+}
+
+#closeOverlay:hover {
+  transform: scale(1.08);
+}
+/* ================= ROAD TRIP ================= */
+.roadtrip-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: #fff0f5;
+}
+
+.road-svg {
+  max-width: 720px;
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.road {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 10 10;
+}
+
+.main-road { stroke: #444; }
+
+.point { fill: #ff4f7b; }
+
+.label {
+  font-size: 14px;
+  fill: #555;
+}
+
+.milestone-dot {
+  fill: #ff7aa2;
+  transition: r 0.3s, filter 0.3s;
+}
+
+.milestone-dot.glow {
+  r: 9;
+  filter: drop-shadow(0 0 10px #ff4f7b);
+}
+
+.milestone-text {
+  font-size: 13px;
+  fill: #b4003a;
+}
+
+.roadtrip-text {
+  margin-top: 24px;
+  font-size: 18px;
+  color: #444;
+}
+
+/* ================= MEMORIES ================= */
+.memories-section {
+  background: linear-gradient(180deg, #ffd6e5 0%, #ffffff 70%);
+  padding: 80px 40px 100px;
+  text-align: center;
+}
+
+.memories-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 48px;
+  color: #7a2c3d;
+  margin-bottom: 50px;
+}
+
+.memories-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.memory-card {
+  background: #f5f5f5;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  transition: transform 0.35s ease;
+}
+
+.memory-card:hover {
+  transform: scale(1.05);
+}
+
+.memory-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.memory-card:hover img {
+  filter: grayscale(0%);
+}
+
+.card-footer {
+  background: #eee;
+  padding: 14px;
+}
+
+.card-footer button {
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #ff6b81;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= SPECIAL POPUP ================= */
+.special-popup {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #6a5acd, #7b68ee);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 12000;
+}
+
+.special-card {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  border-radius: 55px;
+  padding: 75px;
+  max-width: 700px;
+  color: white;
+  text-align: center;
+}
+
+.close-btn {
+  margin-top: 30px;
+  padding: 10px 30px;
+  border-radius: 22px;
+  border: none;
+  background: #ff6b81;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 520px) {
+  .hero-content h1 { font-size: 42px; }
+  .type-text { font-size: 18px; }
+}
+
+.section {
+   font-family: 'Dancing Script', cursive;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;           /* 🔥 hide by default */
+}
+
+.letter-box {
+  max-width: 700px;
+  background: rgba(255,255,255,0.85);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.text {
+  font-size: 26px;
+  color: #d6336c;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  min-height: 120px;
+}
+
+.text.typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.next-btn {
+  margin-top: 25px;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-120vh); }
+}
+
+@keyframes flicker {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 0.9; }
+}
+
+#heart {
+  font-size: 40px;
+  opacity: 0;
+  margin-top: 20px;
+}
+
+.heart-pulse {
+  animation: pulse 2s infinite;
+  opacity: 1;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.2); }
+}

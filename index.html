@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Wishes</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+<!-- ❤️ TOP BAR -->
+<div class="top-bar">
+  <div class="love-counter">
+     Loving you so much mom ❤️
+  </div>
+</div>
+
+<!-- 🌸 HERO / FIRST SCREEN -->
+<section class="hero">
+  <div class="hero-content">
+    
+    <div class="hero-decor">❤️💖💜💕</div>
+    <h1 class="hero-title">Happy Birthday, mummy!</h1>
+
+    <p class="type-text">
+      Today is the special day for me, let’s start the celebration 💕
+    </p>
+
+    <button class="btn" id="celebrateBtn">Start the Celebration</button>
+
+    <div class="scroll-hint">Scroll down ↓</div>
+  </div>
+</section>
+<!-- 🎉 CELEBRATION OVERLAY -->
+<div id="celebration-overlay">
+  <div class="birthday-card">
+    <div class="small-text">HAPPY BIRTHDAY</div>
+    <div class="small-text">TO MY DEAR</div>
+    <div class="big-text">Mom 💕</div>
+
+    <p class="message">
+      your my best friend<br>
+      You are my everything, and I am so grateful for your love and support.
+      You are the sunshine in my life, <br>
+       and I love you more than words that which i can not express.<br>
+      You're my strength you are my love❤️<br>
+    </p>
+   <audio id="celebrationMusic" src="remo-birthday-bgm-mp3-download_4m2MKkHo.mp3" loop></audio>
+    <button class="btn" id="closeOverlay">Close</button>
+  </div>
+</div>
+
+ <section class="memories-section">
+  <h1 class="memories-title">Lets Make Beautiful Memories</h1>
+<div class="memories-gallery">
+
+  <div class="memory-card" data-message= " 💝 My Biggest Blessing
+
+“My biggest blessing isn't something I own; it's someone I have. And that someone is YOU, Mom. Thank you for being my strength, my guide, and my endless source of love. May your life be as beautiful as the love you've given me. 🌸”💕"
+         data-music="music1.mp3.mp3">
+    <img src="pic1.jpeg">
+
+    <div class="card-footer">
+      <button class="read-btn">Read Message 💜</button>
+    </div>
+  </div>
+  <div class="memory-card" data-message="💗 To My First Love
+
+“Dear Mom, you were my first home, my first best friend, and my first love. No matter how much I grow, I'll always be your little girl. Happy Birthday, my forever favorite person! 💕” "
+   data-music="music2.mp3">
+    <img src="pic6.jpeg">
+    <div class="card-footer">
+      <button class="read-btn">Read Message 💜</button>
+    </div>
+  </div>
+
+  <div class="memory-card" data-message="🌷 Thank You for Everything
+
+“Thank you for every hug, every sacrifice, every silent prayer, and every little thing you do for me. I may not say it every day, but I notice it all. I love you more than words can explain, Amma! ❤️”"
+   data-music="music3.mp3">
+  <img src="pic3.jpeg">
+    <div class="card-footer">
+      <button class="read-btn">Read Message 💜</button>
+    </div>
+  </div>
+
+  <div class="memory-card" data-message="🥹 My Safe Place
+
+“Whenever the world feels difficult, your love makes everything feel okay. Your smile is my happiness, your hugs are my comfort, and your presence is my greatest blessing. Happy Birthday, my safe place! 🫂💖"
+  data-music="music4.mp3">
+    <img src="pic3.jpeg">
+    <div class="card-footer">
+      <button class="read-btn">Read Message 💜</button>
+    </div>
+  </div>
+
+  <div class="memory-card" data-message="  🎀 Your Little Girl Forever
+
+“I might grow taller, become older, and chase my dreams, but in your eyes, I'll always be your little girl. And in my heart, you'll always be my number one. Love you forever, Amma! 🩷”"
+  data-music="music5.mp3.mp3">
+    <img src="pic5.jpeg">
+    <div class="card-footer">
+      <button class="read-btn">Read Message 💜</button>
+    </div>
+  </div>
+
+  <div class="memory-card" data-message="👑 The Queen of My Heart
+
+“If I could choose my mom in a thousand lifetimes, I would choose you every single time. You deserve all the happiness, love, and beautiful things this world has to offer. Happy Birthday to my queen! 👑💐”"
+  data-music="music6.mp3">
+    <img src="pic2.jpeg">
+    <div class="card-footer">
+      <button class="read-btn">Read Message 💜</button>
+    </div>
+  </div>
+<!-- 💌 SPECIAL MESSAGE POPUP -->
+<div class="special-popup" id="specialPopup">
+  <div class="special-card">
+    <h1>A Special Message for You</h1>
+    <p id="specialMessageText"></p>
+    <div class="special-footer">I LOVE YOU MUMMY 💖</div>
+    <button class="close-btn" id="closePopup">Close</button>
+  </div>
+</div>
+
+<!-- 🎶 AUDIO (ONLY ONCE!) -->
+<audio id="bgMusic" loop src="remo-birthday-bgm-mp3-download_4m2MKkHo.mp3"></audio>
+<audio id="celebrationMusic" src="remo-birthday-bgm-mp3-download_4m2MKkHo.mp3"></audio>
+<audio id="engineSound" loop src="engine.mp3"></audio>
+<audio id="softMusic" loop src="soft-music.mp3"></audio>
+<audio id="messageMusic"></audio>
+<audio id="music" src="remo-birthday-bgm-mp3-download_4m2MKkHo.mp3"></audio>
+<audio id="music" src="remo-birthday-bgm-mp3-download_4m2MKkHo.mp3"></audio>
+</section>
+<audio id="letterMusic" src="Remo Birthday Bgm Mp3 Download.mp3" loop></audio>
+<div class="section" id="s1">
+  <div class="letter-box">
+    <div class="text" id="t1"></div>
+    <button class="next-btn" onclick="goNext(2)">Next ➜</button>
+  </div>
+</div>
+<audio id="letterMusic" src="Remo Birthday Bgm Mp3 Download.mp3" loop></audio>
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <div class="letter-box">
+    <div class="text" id="t1"></div>
+    <button type="button" class="next-btn" onclick="goNext(2)">Next ➜</button>
+  </div>
+</div>
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <div class="letter-box">
+    <div class="text" id="t2"></div>
+    <button type="button" class="next-btn" onclick="goNext(3)">Next ➜</button>
+  </div>
+</div>
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+  <div class="letter-box">
+    <div class="text" id="t3"></div>
+    <button type="button" class="next-btn" onclick="goNext(4)">Next ➜</button>
+  </div>
+</div>
+
+<!-- SECTION 4 (FINAL LETTER) -->
+<div class="section" id="s4">
+  <div class="letter-box">
+    <div class="text" id="t4"></div>
+  </div>
+</div>
+<div class="section" id="sEnd">
+  <div class="letter-box">
+    <div id="endText"></div>
+    <div id="heart"></div>
+    <button id="endNext" class="next-btn">Next</button>
+  </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
